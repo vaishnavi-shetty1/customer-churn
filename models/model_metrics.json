@@ -1,0 +1,149 @@
+{
+  "dataset": {
+    "original_rows": 7043,
+    "cleaned_rows": 7032,
+    "removed_missing_total_charges": 11,
+    "duplicate_rows": 22,
+    "retained_customers": 5163,
+    "churned_customers": 1869,
+    "churn_rate": 0.26578498293515357
+  },
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "training_rows": 5625,
+    "testing_rows": 1407
+  },
+  "feature_columns": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "models": {
+    "Logistic Regression": {
+      "metrics": {
+        "accuracy": 0.7256574271499645,
+        "precision": 0.4901315789473684,
+        "recall": 0.7967914438502673,
+        "f1_score": 0.6069246435845214,
+        "roc_auc": 0.8351344145860403,
+        "classification_report": {
+          "Not Churn": {
+            "precision": 0.904881101376721,
+            "recall": 0.6999031945788964,
+            "f1-score": 0.7893013100436681,
+            "support": 1033.0
+          },
+          "Churn": {
+            "precision": 0.4901315789473684,
+            "recall": 0.7967914438502673,
+            "f1-score": 0.6069246435845214,
+            "support": 374.0
+          },
+          "accuracy": 0.7256574271499645,
+          "macro avg": {
+            "precision": 0.6975063401620447,
+            "recall": 0.7483473192145819,
+            "f1-score": 0.6981129768140948,
+            "support": 1407.0
+          },
+          "weighted avg": {
+            "precision": 0.7946349596648675,
+            "recall": 0.7256574271499645,
+            "f1-score": 0.7408230774525374,
+            "support": 1407.0
+          }
+        }
+      },
+      "confusion_matrix": [
+        [
+          723,
+          310
+        ],
+        [
+          76,
+          298
+        ]
+      ]
+    },
+    "Random Forest": {
+      "metrics": {
+        "accuracy": 0.775408670931059,
+        "precision": 0.5703883495145631,
+        "recall": 0.6283422459893048,
+        "f1_score": 0.5979643765903307,
+        "roc_auc": 0.8249853756516248,
+        "classification_report": {
+          "Not Churn": {
+            "precision": 0.8603015075376884,
+            "recall": 0.8286544046466602,
+            "f1-score": 0.8441814595660749,
+            "support": 1033.0
+          },
+          "Churn": {
+            "precision": 0.5703883495145631,
+            "recall": 0.6283422459893048,
+            "f1-score": 0.5979643765903307,
+            "support": 374.0
+          },
+          "accuracy": 0.775408670931059,
+          "macro avg": {
+            "precision": 0.7153449285261257,
+            "recall": 0.7284983253179824,
+            "f1-score": 0.7210729180782028,
+            "support": 1407.0
+          },
+          "weighted avg": {
+            "precision": 0.7832385927540004,
+            "recall": 0.775408670931059,
+            "f1-score": 0.7787335640202837,
+            "support": 1407.0
+          }
+        }
+      },
+      "confusion_matrix": [
+        [
+          856,
+          177
+        ],
+        [
+          139,
+          235
+        ]
+      ]
+    }
+  },
+  "selected_model": "Logistic Regression",
+  "selection_metric": "f1_score",
+  "selected_model_score": 0.6069246435845214,
+  "best_logistic_regression_params": {
+    "C": 1.0,
+    "class_weight": "balanced"
+  },
+  "confusion_matrix": [
+    [
+      723,
+      310
+    ],
+    [
+      76,
+      298
+    ]
+  ]
+}
